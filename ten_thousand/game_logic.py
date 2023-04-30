@@ -3,6 +3,14 @@ from collections import Counter
 
 
 class GameLogic:
+
+    """
+    GameLogic class contains the rules & logic of this game.
+
+    it also consists of two methods which should calculate the score and roll the dice.
+    
+    """
+
     def __init__(self):
         pass
 
