@@ -35,8 +35,8 @@ def start_game(round_num=1, total=0, number_dices=6, round_score=0):
     kept_dices = tuple(int(x) for x in dice_picked)
     remaining_dices = number_dices - len(kept_dices)
 
-    if not all(die in list(first_roll) for die in kept_dices):
-        print("cheater!!!")
+    if not all(dice in list(first_roll) for dice in kept_dices):
+        print("cheater!!! or just a typo?")
         end_game(total)
         return
 
