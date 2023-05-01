@@ -1,5 +1,5 @@
 import pytest
-from tests.Version_2.flo import diff
+from tests.flo import diff
 from ten_thousand.game import play
 
 pytestmark = [pytest.mark.version_2]

@@ -3,14 +3,6 @@ from collections import Counter
 
 
 class GameLogic:
-
-    """
-    GameLogic class contains the rules & logic of this game.
-
-    it also consists of two methods which should calculate the score and roll the dice.
-    
-    """
-
     def __init__(self):
         pass
 
@@ -91,3 +83,29 @@ class GameLogic:
             randomNumber = random.randint(1, 6)
             num_list.append(randomNumber)
         return tuple(num_list)
+        # Fives:
+
+    def validate_keepers(first_roll, kept_dices):
+        dices = Counter(first_roll)
+        keepers = Counter(kept_dices)
+        count = keepers-dices
+        if not count:
+            return True
+        else:
+            return False
+
+    def get_scorers(first_roll):
+        if not first_roll:
+            return ()
+        else:
+            full_score = GameLogic.calculate_score(first_roll)
+            result = []
+            for i in first_roll:
+                lis = []
+                for j in first_roll:
+                    if j != i:
+                        lis.append(j)
+                tup = tuple(lis)
+                if (full_score != GameLogic.calculate_score(tup)):
+                    result.append(i)
+            return tuple(result)
