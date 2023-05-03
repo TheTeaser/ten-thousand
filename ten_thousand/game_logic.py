@@ -86,7 +86,7 @@ class GameLogic:
         # Fives:
 
     def validate_keepers(first_roll, kept_dices):
-        dices = Counter(first_roll)
+        dices = Counter(GameLogic.get_scorers(first_roll))
         keepers = Counter(kept_dices)
         count = keepers-dices
         if not count:
